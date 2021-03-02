@@ -1,4 +1,4 @@
-var timerEl = document.querySelector(".timer-count");
+var timerEl = document.querySelector(".timer-el");
 var startButton = document.querySelector(".start-button");
 // var showQuestion = document.querySelector(".show-question");
 var questionListEl = document.querySelector(".question-list");
@@ -44,33 +44,24 @@ var questions = [
 
 startButton.addEventListener("click", renderQuestion);
 
+//start quiz function 
 function startQuiz() {
-    timerCount = 60;
     renderQuestion();
     startTimer();
 }
 
+//timer function
 function startTimer() {
-    // Sets timer
-    timer = setInterval(function() {
-      timerCount--;
-      timerEl.textContent = timerCount + "  seconds remaining!";
-      // if (timerCount >= 0) {
-      //   // Tests if win condition is met
-      //   if (isWin && timerCount > 0) {
-      //     // Clears interval and stops timer
-      //     clearInterval(timer);
-      //     winGame();
-      //   }
-      // }
-      // Tests if time has run out
-      if (timerCount === 0) {
-        // Clears interval
-        clearInterval(timer);
-        endQuiz();
-      }
-    }, 1000);
-  }
+  //setting time to count down from 60 seconds
+  var timerCount = 60;
+  timer = setInterval(function() {
+    timerCount--;
+    timerEl.textContent = timerCount + "  seconds remaining!";
+    if (timerCount === 0) {
+    clearInterval(timer);
+    endQuiz(); }
+  }, 1000);
+}
 
 function endQuiz() {
     timerEl.textContent = "GAME OVER";
@@ -82,6 +73,7 @@ function endQuiz() {
 var questionIndex = 0;
 var correctAnswers = 0;
 
+//gives user question from the question array
 function renderQuestion() {
   startTimer();
   questionEl.textContent = questions[questionIndex].title;

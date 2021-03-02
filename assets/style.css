@@ -1,0 +1,16 @@
+.heading {
+    text-align: center;
+    font-family: 'VT323', monospace;
+    font-size: 4.5em;
+    color: darkgreen;
+};
+
+.start-button {
+    background-color: red;
+    border: none;
+    border-radius: .5em;
+};
+
+.question {
+    font-family: 'VT323', monospace; 
+};
