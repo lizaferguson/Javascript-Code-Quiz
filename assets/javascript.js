@@ -101,7 +101,7 @@ function renderQuestion() {
 }
 
 function checkAnswer() {
-var selectedChoice = 
+var selectedChoice = "";
   //   console.log(Event.arguments);
   // clearInterval(intervalId);
 
@@ -113,7 +113,7 @@ var selectedChoice =
 
   //   // Store the actual text content of the li element in variable, 'selectedChoice'.
     
-      if (selectedChoice === questions[questionIndex].answer) {
+  if (selectedChoice === questions[questionIndex].answer) {
     correctAnswers++;
     questionResultEl.textContent = "Correct Answer :-) ";
     } 
